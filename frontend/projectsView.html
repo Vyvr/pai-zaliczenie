@@ -1,0 +1,16 @@
+<div><br/><br/></div>
+
+<table class="table table-stripped table-hover">
+    <tr>
+        <td>
+            <button class="btn btn-default btn-xs fa fa-plus" ng-click="ctrl.edit(-1)"></button>
+        </td>
+        <th>Nazwa</th>
+        <th>Właściciel</th>
+    </tr>
+    <tr ng-repeat="project in ctrl.projects" ng-click="ctrl.edit($index)">
+        <td></td>
+        <td ng-bind="project.name"></td>
+        <td ng-bind="project.ownerFullName"></td>
+    </tr>
+</table>

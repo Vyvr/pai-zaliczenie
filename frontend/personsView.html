@@ -1,0 +1,30 @@
+<div style="float: right">
+    <form class="form form-inline">
+        <input class="form-control" type="text" placeholder="filtr" ng-model="ctrl.q" ng-change="ctrl.refreshData()"/>
+        <input class="form-control" type="number" placeholder="skip" ng-model="ctrl.skip" ng-change="ctrl.refreshData()"/>
+        <input class="form-control" type="number" placeholder="limit" ng-model="ctrl.limit" ng-change="ctrl.refreshData()"/>
+    </form>
+</div>
+
+<div><br/><br/></div>
+
+<table class="table table-stripped table-hover">
+    <tr>
+        <td>
+            <button class="btn btn-default btn-xs fa fa-plus" ng-click="ctrl.edit(-1)"></button>
+        </td>
+        <th>Imię</th>
+        <th>Nazwisko</th>
+        <th>Rok urodzenia</th>
+        <th>Transakcji</th>
+        <th>Stan konta</th>
+    </tr>
+    <tr ng-repeat="person in ctrl.persons" ng-click="ctrl.edit($index)">
+        <td></td>
+        <td ng-bind="person.firstName"></td>
+        <td ng-bind="person.lastName"></td>
+        <td ng-bind="person.year"></td>
+        <td style="text-align: right" ng-bind="person.transactions"></td>
+        <td style="text-align: right" ng-bind="person.balance"></td>
+    </tr>
+</table>

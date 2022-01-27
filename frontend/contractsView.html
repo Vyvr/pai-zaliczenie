@@ -1,0 +1,31 @@
+<!-- @format -->
+
+<div><br /><br /></div>
+
+<table class="table table-stripped table-hover">
+  <tr>
+    <td>
+      <button
+        class="btn btn-default btn-xs fa fa-plus"
+        ng-click="ctrl.edit(-1)"
+      ></button>
+    </td>
+    <th>Nazwa</th>
+    <th>Wykonawca</th>
+    <th>Projekt</th>
+    <th>Rozpoczęcie</th>
+    <th>Koniec</th>
+    <th>Wynagrodzenie</th>
+    <th>Rozliczony</th>
+  </tr>
+  <tr ng-repeat="contract in ctrl.contracts" ng-click="ctrl.edit($index)">
+    <td></td>
+    <td ng-bind="contract.name"></td>
+    <td ng-bind="contract.executorName"></td>
+    <td ng-bind="contract.projectName"></td>
+    <td ng-bind="contract.start"></td>
+    <td ng-bind="contract.end"></td>
+    <td ng-bind="contract.salary"></td>
+    <td ng-bind="contract.commited ? 'Tak' : 'Nie' "></td>
+  </tr>
+</table>

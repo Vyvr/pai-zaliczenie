@@ -1,0 +1,24 @@
+{
+  "name": "pai2021-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.8.2",
+    "angular-animate": "^1.8.2",
+    "angular-cookies": "^1.8.2",
+    "angular-route": "^1.8.2",
+    "angular-sanitize": "^1.8.2",
+    "angular-ui-bootstrap": "^2.5.6",
+    "angular-ws": "^1.1.0",
+    "bootstrap3": "^3.3.5",
+    "bower": "^1.8.13",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.6.0"
+  }
+}

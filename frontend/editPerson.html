@@ -1,0 +1,24 @@
+<div>
+
+    <div class="modal-header">
+        <h3 class="modal-title" id="modal-title" ng-bind="ctrl.options.title"></h3>
+    </div>
+    <div class="modal-body" id="modal-body">
+
+        <form class="form">
+            <label for="firstName">Imię</label>
+            <input id="firstName" type="text" class="form-control" ng-model="ctrl.options.data.firstName"/>
+            <label for="lastName">Nazwisko</label>
+            <input id="lastName" type="text" class="form-control" ng-model="ctrl.options.data.lastName"/>
+            <label for="year">Rok urodzenia</label>
+            <input id="year" type="number" class="form-control" ng-model="ctrl.options.data.year"/>
+        </form>
+
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-success fa fa-check" type="button" ng-click="ctrl.submit('ok')" ng-if="ctrl.options.ok" ng-disabled="!ctrl.options.data.firstName || !ctrl.options.data.lastName"></button>
+        <button class="btn btn-danger fa fa-trash" type="button" ng-click="ctrl.submit('delete')" ng-if="ctrl.options.delete"></button>
+        <button class="btn btn-warning fa fa-times" type="button" ng-click="ctrl.cancel()" ng-if="ctrl.options.cancel"></button>
+    </div>
+
+</div>

@@ -1,0 +1,99 @@
+<!-- @format -->
+
+<div>
+  <div class="modal-header">
+    <h3 class="modal-title" id="modal-title" ng-bind="ctrl.options.title"></h3>
+  </div>
+  <div class="modal-body" id="modal-body">
+    <form class="form">
+      <label for="name">Nazwa</label>
+      <input
+        id="name"
+        type="text"
+        class="form-control"
+        ng-model="ctrl.options.data.name"
+      />
+
+      <label for="executor">Wykonawca</label>
+      <select
+        id="executor"
+        class="form-control"
+        ng-model="ctrl.options.data.executor"
+      >
+        <option
+          ng-repeat="person in ctrl.persons"
+          value="{{person._id}}"
+          ng-bind="person.firstName+' '+person.lastName"
+        ></option>
+      </select>
+
+      <label for="project">Projekt</label>
+      <select
+        id="project"
+        class="form-control"
+        ng-model="ctrl.options.data.project"
+      >
+        <option
+          ng-repeat="project in ctrl.projects"
+          value="{{project._id}}"
+          ng-bind="project.name"
+        ></option>
+      </select>
+
+      <label for="starts">Rozpoczęcie</label>
+      <input
+        id="starts"
+        type="date"
+        class="form-control"
+        value="{{ctrl.options.data.start}}"
+        ng-model="ctrl.options.data.start"
+      />
+
+      <label for="ends">Koniec</label>
+      <input
+        id="ends"
+        type="date"
+        class="form-control"
+        value="{{ctrl.options.data.end}}"
+        ng-model="ctrl.options.data.end"
+      />
+
+      <label for="salary">Wynagrodzenie</label>
+      <input
+        id="salary"
+        type="number"
+        class="form-control"
+        ng-model="ctrl.options.data.salary"
+      />
+      <label for="commited">Rozlicz</label>
+      <input
+        id="commited"
+        type="checkbox"
+        class="form-control"
+        checked="{{ctrl.options.data.commited}}"
+        ng-model="ctrl.options.data.commited"
+      />
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button
+      class="btn btn-success fa fa-check"
+      type="button"
+      ng-click="ctrl.submit('ok')"
+      ng-if="ctrl.options.ok"
+      ng-disabled="!ctrl.options.data.name || !ctrl.options.data.executor || !ctrl.options.data.project || !ctrl.options.data.ends || !ctrl.options.data.starts || !ctrl.options.data.salary"
+    ></button>
+    <button
+      class="btn btn-danger fa fa-trash"
+      type="button"
+      ng-click="ctrl.submit('delete')"
+      ng-if="ctrl.options.delete"
+    ></button>
+    <button
+      class="btn btn-warning fa fa-times"
+      type="button"
+      ng-click="ctrl.cancel()"
+      ng-if="ctrl.options.cancel"
+    ></button>
+  </div>
+</div>
