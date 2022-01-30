@@ -5,13 +5,19 @@ const lib = require("./lib");
 
 const contract = (module.exports = {
   handle: function (env) {
+    const localeDate = (date) => {
+      return date - 1 * 24 * 60 * 60 * 1000;
+    };
+
     const validate = function (contract) {
+      localeStartDate = localeDate(contract.start);
+      localeEndDate = localeDate(contract.end);
       let result = {
         name: contract.name,
         executorName: contract.executorName,
         projectName: contract.projectName,
-        start: new Date(contract.start.toString()).toISOString().split("T")[0],
-        end: new Date(contract.end.toString()).toISOString().split("T")[0],
+        start: new Date(contract.start).toLocaleDateString().split("T")[0],
+        end: new Date(contract.end).toLocaleDateString().split("T")[0],
         salary: contract.salary,
         executor:
           typeof contract.executor === "string"
